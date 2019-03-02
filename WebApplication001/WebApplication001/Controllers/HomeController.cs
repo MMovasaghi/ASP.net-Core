@@ -12,9 +12,22 @@ namespace WebApplication001.Controllers
     {
         public IActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
+            ViewBag.a = "There is a first Web application that I create.";
+            return View("MyView");
+        }
+        [HttpGet]
+        public ViewResult RsvpForm()
+        {
             return View();
         }
-
+        [HttpPost]
+        public ViewResult RsvpForm(Classes.GuestResponse guestResponse)
+        {
+            // TODO: store response from guest
+            return View();
+        }
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
