@@ -8,5 +8,3 @@
 <br />
 ## Description
 We wanna to learn ASP.net Core in self-study mode :)
-<br />
-let's [start](https://github.com/MMovasaghi)! :+1:
