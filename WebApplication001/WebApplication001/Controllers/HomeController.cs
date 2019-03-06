@@ -5,12 +5,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication001.Models;
+using WebApplication001.Classes;
 
 namespace WebApplication001.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public ViewResult Index()
         {
             int hour = DateTime.Now.Hour;
             ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
@@ -25,8 +26,13 @@ namespace WebApplication001.Controllers
         [HttpPost]
         public ViewResult RsvpForm(Classes.GuestResponse guestResponse)
         {
-            // TODO: store response from guest
-            return View();
+            Repository.AddResponse(guestResponse);
+            return View("Thanks", guestResponse);
+        }
+        [HttpGet]
+        public ViewResult ListResponses()
+        {
+            return View(Repository.Responses.Where(r => r.WillAttend == true));
         }
         public IActionResult About()
         {
