@@ -26,8 +26,16 @@ namespace WebApplication001.Controllers
         [HttpPost]
         public ViewResult RsvpForm(Classes.GuestResponse guestResponse)
         {
-            Repository.AddResponse(guestResponse);
-            return View("Thanks", guestResponse);
+            if (ModelState.IsValid)
+            {
+                Repository.AddResponse(guestResponse);
+                return View("Thanks", guestResponse);
+            }
+            else
+            {
+                // there is a validation error
+                return View();
+            }
         }
         [HttpGet]
         public ViewResult ListResponses()
