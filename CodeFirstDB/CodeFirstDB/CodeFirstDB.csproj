@@ -125,6 +125,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20190321143912_InitialCreate.cs" />
+    <Compile Include="Migrations\20190321143912_InitialCreate.designer.cs">
+      <DependentUpon>20190321143912_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\PersonDBModelSnapshot.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonDB.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
