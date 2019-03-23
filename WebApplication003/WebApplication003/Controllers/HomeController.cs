@@ -19,6 +19,7 @@ namespace WebApplication003.Controllers
                 Category = "Watersports",
                 Price = 275M
             };
+            ViewBag.stocklevel = 2;
             return View(myProduct);
         }
     }

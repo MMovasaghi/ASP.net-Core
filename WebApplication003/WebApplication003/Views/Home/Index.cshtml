@@ -2,15 +2,8 @@
 @{
     ViewBag.Title = "Product Name";
 }
-<p>Product Name: @Model.Name</p>
-<p>Product Price: @($"{Model.Price:C2}") </p>
-@*<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    @Model.Name
-</body>
-</html>*@
+<div data-productid="@Model.ProductID" data-stocklevel="@ViewBag.stocklevel">
+    <p>Product Name: @Model.Name</p>
+    <p>Product Price: @($"{Model.Price:C2}") </p>
+    <p>Stock Level: @ViewBag.stocklevel</p>
+</div>
