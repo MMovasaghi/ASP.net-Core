@@ -1,8 +1,13 @@
 ﻿@model WebApplication003.Models.Product
 @{
-    Layout = null;
+    Layout = "_BasicLayout";
+    ViewBag.Title = "Product Name";
+    ViewBag.var1 = Model.ProductID.ToString();
 }
-<!DOCTYPE html>
+Product Name: @Model.Name
+<br/>
+Price: @Model.Price
+@*<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -11,4 +16,4 @@
 <body>
     @Model.Name
 </body>
-</html>
+</html>*@
