@@ -11,16 +11,14 @@ namespace WebApplication003.Controllers
     {
         public ViewResult Index()
         {
-            Product myProduct = new Product
+            Product[] arr =
             {
-                ProductID = 1,
-                Name = "Kayak",
-                Description = "A boat for one person",
-                Category = "Watersports",
-                Price = 275M
+                new Product { Name = "Kayak", Price = 100M},
+                new Product { Name = "Lifejacket", Price = 200M},
+                new Product { Name = "Soccer Ball", Price = 90M},
+                new Product { Name = "Corner Ball", Price = 200M},
             };
-            ViewBag.stocklevel = 0;
-            return View(myProduct);
+            return View(arr);
         }
     }
 }
