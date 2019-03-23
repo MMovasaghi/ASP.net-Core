@@ -1,11 +1,9 @@
 ﻿@model WebApplication003.Models.Product
 @{
     ViewBag.Title = "Product Name";
-    ViewBag.var1 = Model.ProductID.ToString();
 }
-Product Name: @Model.Name
-<br/>
-Price: @Model.Price
+<p>Product Name: @Model.Name</p>
+<p>Product Price: @($"{Model.Price:C2}") </p>
 @*<!DOCTYPE html>
 <html>
 <head>
