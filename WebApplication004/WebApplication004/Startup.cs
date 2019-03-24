@@ -32,6 +32,7 @@ namespace WebApplication004
             //});
             app.UseDeveloperExceptionPage();
             app.UseBrowserLink();
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
