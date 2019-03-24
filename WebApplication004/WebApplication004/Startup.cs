@@ -31,6 +31,7 @@ namespace WebApplication004
             //    await context.Response.WriteAsync("Hello World!");
             //});
             app.UseDeveloperExceptionPage();
+            app.UseBrowserLink();
             app.UseMvcWithDefaultRoute();
         }
     }

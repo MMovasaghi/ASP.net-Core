@@ -6,6 +6,6 @@ namespace WebApplication004.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index() => View(SimpleRepository.SharedRepository.Products.Where(p => p.Price < 40));
+        public IActionResult Index() => View(SimpleRepository.SharedRepository.Products.Where(p => p?.Price < 40));
     }
 }
