@@ -18,11 +18,12 @@ namespace WebApplication004.Models
                  new Product { Name = "Soccer ball", Price = 19.50M },
                  new Product { Name = "Corner flag", Price = 34.95M }
             };
-        
+
             foreach (var p in initialItems)
             {
                 AddProduct(p);
             }
+            products.Add("Error", null);
         }
         public IEnumerable<Product> Products => products.Values;
         public void AddProduct(Product p) => products.Add(p.Name, p);
