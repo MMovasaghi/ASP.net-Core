@@ -23,6 +23,7 @@ namespace CodeFirstDB
                     Console.WriteLine("{0} - {1}", person.Id, person.Name);
                 }
             }
+                
         }
     }
 }
