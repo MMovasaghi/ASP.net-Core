@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using SportStoreSimpleCode.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
 
 namespace SportStoreSimpleCode
 {
@@ -14,9 +16,14 @@ namespace SportStoreSimpleCode
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+
+        public Startup(IConfiguration configuration) => Configuration = configuration;
+        public IConfiguration Configuration { get; }
+
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IProductRepository, FakeProductRepository>();
+            services.AddDbContext<Models.AppContext>(options => options.UseSqlServer( Configuration["Data:SportStoreProducts:ConnectionString"]));
+            services.AddTransient<IProductRepository, EFProductRepository>();
             services.AddMvc();
         }
 
@@ -26,7 +33,12 @@ namespace SportStoreSimpleCode
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvc(routes => { });
+            app.UseMvc(routes => {
+                routes.MapRoute(
+                name: "default",
+                template: "{controller=Product}/{action=List}/{id?}");
+            });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
