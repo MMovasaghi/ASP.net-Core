@@ -7,14 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SportsStoreSimpleCode\SportsStoreSimpleCode.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="xunit" Version="2.4.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
-    <PackageReference Include="Moq" Version="4.7.99" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SportStoreSimpleCode\SportStoreSimpleCode.csproj" />
   </ItemGroup>
 
 </Project>
