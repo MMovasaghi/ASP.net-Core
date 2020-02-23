@@ -1,4 +1,4 @@
-# ASP.net Core Learning
+# ASP.net Core Simple Apps
 ## Introduction
 **Operating system:** Cross-Platform
 <br />
