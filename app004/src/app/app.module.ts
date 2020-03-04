@@ -20,6 +20,11 @@ import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
+import { AlertifyService } from './_services/alertify.service';
+import { UserService } from './_services/user.service';
+import { AuthGuard } from './_guards/auth.guard';
+import { MemberListResolver } from './_resolvers/member-list.resolver';
 
 
 export function tokenGetter() {
@@ -56,7 +61,12 @@ export function tokenGetter() {
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      AlertifyService,
+      UserService,
+      AuthGuard,
+      ErrorInterceptorProvider,
+      MemberDetailResolver,
+      MemberListResolver,
    ],
    bootstrap: [
       AppComponent
